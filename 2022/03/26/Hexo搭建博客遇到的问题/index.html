@@ -106,7 +106,7 @@
     <div class="post-word-count">
       
 
-本文共127字。
+本文共631字。
 
     </div>
   
@@ -114,19 +114,12 @@
   
 
   <div class="article-entry" itemprop="articleBody">
-    <p>早几年就想用hexo自己搭建博客了，中途遇到阻碍，计划就搁置了。最近查资料，发现C字开头的网站十篇有九篇是同质内容，还很多广告。就又想起自己搭建博客的念头，这里记录下搭建时遇到的问题和解决方法。</p>
-<h2 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <p>早几年就想用hexo自己搭建博客了，中途遇到阻碍，计划就搁置了。最近查资料，发现某C字开头的网站十篇有九篇是同质内容，还很多广告。就又想起自己搭建博客的念头，这里记录下搭建时遇到的问题和解决方法。</p>
+<h2 id="问题一：初始化hexo时报错：ExperimentalWarning-The-fs-promises-API-is-experimental"><a href="#问题一：初始化hexo时报错：ExperimentalWarning-The-fs-promises-API-is-experimental" class="headerlink" title="问题一：初始化hexo时报错：ExperimentalWarning: The fs.promises API is experimental"></a>问题一：初始化hexo时报错：ExperimentalWarning: The fs.promises API is experimental</h2><p>这个问题是使用hexo init命令，项目自动引入了最新的模块，但本地的node的版本不是最新的</p>
+<h3 id="问题二：将node升级到最新版本"><a href="#问题二：将node升级到最新版本" class="headerlink" title="问题二：将node升级到最新版本"></a>问题二：将node升级到最新版本</h3><p>小吐槽：为什么升级npm只要一行命令，升级node却这么麻烦。网上查到的方法大多过时不适用。<br>下面讲解我踩到的几个坑：<br>（1）查到一个通过安装n模块的来管理node的版本，操作后却发现这种方法是争对linux的。无效。<br>（2）查到使用npm install npm@latest -g，报错You should probably upgrade to a newer version of node as we<br>can’t make any promises that npm will work with this version.。因为我之前先升级了npm，导致npm的版本高于node，命令执行不了。<br>（3）查到得先卸载node和删除各种路径，再在网上下载版本进行安装。路径太多不想删。<br>解决方法：<br>直接在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%8C%E7%82%B9%E5%87%BB%E5%AE%89%E8%A3%85%EF%BC%88%E9%9C%80%E8%A6%81%E5%9C%A8%E5%8E%9F%E6%9D%A5%E7%9A%84node.exe%E8%B7%AF%E5%BE%84%E4%B8%8B%EF%BC%89%EF%BC%8C%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E5%8D%B3%E6%98%AF%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E3%80%82">https://nodejs.org/zh-cn/download/下载对应安装包，点击安装（需要在原来的node.exe路径下），安装完成后即是最新版本。</a></p>
+<h3 id="问题三：将ssh公钥添加到github账户中报错-Key-is-invalid-You-must-supply-a-key-in-OpenSSH-public-key-format-github"><a href="#问题三：将ssh公钥添加到github账户中报错-Key-is-invalid-You-must-supply-a-key-in-OpenSSH-public-key-format-github" class="headerlink" title="问题三：将ssh公钥添加到github账户中报错 Key is invalid. You must supply a key in OpenSSH public key format github"></a>问题三：将ssh公钥添加到github账户中报错 Key is invalid. You must supply a key in OpenSSH public key format github</h3><p>明明我就是点开notepad复制的阿，结果还是报错。后来发现是直接粘贴复制，ssh文件会破坏格式。<br>需要点开git.bash，用clip &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub命令，就成功了。</p>
+<h3 id="问题四：hexo启用主题后不生效"><a href="#问题四：hexo启用主题后不生效" class="headerlink" title="问题四：hexo启用主题后不生效"></a>问题四：hexo启用主题后不生效</h3><p>（1）这个建议大家直接访问<a target="_blank" rel="noopener" href="https://hexo.io/themes/%EF%BC%8C%E7%82%B9%E5%87%BB%E4%B8%BB%E9%A2%98%E9%87%8C%E5%AF%B9%E5%BA%94%E7%9A%84github%E5%9C%B0%E5%9D%80%EF%BC%8C%E9%87%8C%E9%9D%A2%E7%9A%84md%E4%BC%9A%E6%9C%89%E8%AF%A6%E7%BB%86%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95%E3%80%82">https://hexo.io/themes/，点击主题里对应的github地址，里面的md会有详细的配置方法。</a><br>有的安装教程只是对博主选择的那个主题有效，比如主题名称、目录配置什么的，具体主题各不相同。<br>（2）直接从github上拉主题的分支，我默认放在了建博客的文件夹下。其实这是错误的，得放在themes的文件夹下才生效，不然会报错找不到Html。</p>
+<h3 id="问题五：github地址和本地渲染不一致"><a href="#问题五：github地址和本地渲染不一致" class="headerlink" title="问题五：github地址和本地渲染不一致"></a>问题五：github地址和本地渲染不一致</h3><p>将config.yml里delopy的branch: master改成branch: main即可解决</p>
 
   </div>
 </article>
@@ -134,7 +127,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题一：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96hexo%E6%97%B6%E6%8A%A5%E9%94%99%EF%BC%9AExperimentalWarning-The-fs-promises-API-is-experimental"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题一：初始化hexo时报错：ExperimentalWarning: The fs.promises API is experimental</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9A%E5%B0%86node%E5%8D%87%E7%BA%A7%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">问题二：将node升级到最新版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89%EF%BC%9A%E5%B0%86ssh%E5%85%AC%E9%92%A5%E6%B7%BB%E5%8A%A0%E5%88%B0github%E8%B4%A6%E6%88%B7%E4%B8%AD%E6%8A%A5%E9%94%99-Key-is-invalid-You-must-supply-a-key-in-OpenSSH-public-key-format-github"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">问题三：将ssh公钥添加到github账户中报错 Key is invalid. You must supply a key in OpenSSH public key format github</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E5%9B%9B%EF%BC%9Ahexo%E5%90%AF%E7%94%A8%E4%B8%BB%E9%A2%98%E5%90%8E%E4%B8%8D%E7%94%9F%E6%95%88"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">问题四：hexo启用主题后不生效</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%94%EF%BC%9Agithub%E5%9C%B0%E5%9D%80%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%B8%B2%E6%9F%93%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">问题五：github地址和本地渲染不一致</span></a></li></ol></li></ol>
         </nav>
     </aside>
    
