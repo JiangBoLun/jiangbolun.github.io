@@ -152,12 +152,12 @@
 }
 .article-entry h4 {
   padding: 0.5rem 0 1rem 0;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 .article-entry h5 {
   padding: 0.5rem 0 1rem 0;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   font-style: italic;
 }
@@ -263,7 +263,7 @@
 .article-entry.condense h1,
 .article-entry.condense h2,
 .article-entry.condense h3 {
-  font-size: 20px;
+  font-size: 16px;
 }
 .article-entry.condense ul,
 .article-entry.condense li {
@@ -326,7 +326,7 @@
   line-height: 1.5em;
   text-indent: 2em;
   text-align: justify;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Noto Serif', 'Noto Serif SC', sans-serif;
   font-weight: 400;
   word-break: break-word;
@@ -354,16 +354,16 @@
   content: '“';
   padding-right: 0.25em;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 24px;
 }
 .post-item blockquote p:after {
   content: '”';
   padding-left: 0.25em;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 24px;
 }
 .post-item blockquote p {
-  font-size: 20px;
+  font-size: 16px;
 }
 .post-item.condense {
   padding: 10px 0;
@@ -471,7 +471,7 @@
   line-height: 1.5em;
   text-indent: 2em;
   text-align: justify;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Noto Serif', 'Noto Serif SC', sans-serif;
   font-weight: 400;
   word-break: break-word;
@@ -514,13 +514,13 @@
   content: '“';
   padding-right: 0.25em;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 24px;
 }
 .post blockquote p:after {
   content: '”';
   padding-left: 0.25em;
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 24px;
 }
 .post .table-container {
   margin-top: 1.5em;
@@ -839,8 +839,8 @@ pre {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 19.2px;
+  height: 19.2px;
   padding: 0.25em;
   margin: 10px 1em;
   border-radius: 5px;
@@ -872,7 +872,7 @@ pre {
   }
 }
 .highlight table .clipboard-btn i {
-  font-size: 20px;
+  font-size: 16px;
 }
 @media (prefers-color-scheme: light) {
   .highlight table .clipboard-btn:hover {
