@@ -276,7 +276,7 @@
 }
 .post-item .post-item-head .post-item-title {
   margin: 0px 0px 10px;
-  font-size: 30px;
+  font-size: 24px;
   font-family: 'Noto Sans', 'Noto Sans SC';
 }
 .post-item .post-item-head .post-item-title a {
@@ -388,7 +388,7 @@
 }
 .post .post-head .post-title {
   margin: 0px 0px 1em;
-  font-size: 30px;
+  font-size: 24px;
 }
 .post .post-head .post-title a {
   position: relative;
@@ -1721,7 +1721,7 @@ del {
   padding: 0.5rem 0 1rem 0;
   font-size: 24px;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 24px;
 }
 .about {
   font-size: 16px;
